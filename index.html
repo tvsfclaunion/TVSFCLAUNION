@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TV SFC LA UNIÓN</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbDJ7q8xdCdAxsDDb5lQGbckDfQVc5aIb3YpU2WHq4VQ&s=10") no-repeat center center fixed;
+background-size:cover;
+color:#fff;
+}
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.6);
+z-index:-1;
+}
+.logo-float{
+position:absolute;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+max-width:180px;
+z-index:1000;
+}
+nav{
+background:#020617;
+display:flex;
+justify-content:center;
+gap:16px;
+padding:12px;
+flex-wrap:wrap;
+}
+nav a{
+color:#22c55e;
+text-decoration:none;
+font-weight:bold;
+}
+section{
+padding:30px 16px;
+max-width:1100px;
+margin:auto;
+}
+.card{
+background:rgba(2,6,23,.9);
+border-radius:14px;
+padding:18px;
+margin-bottom:20px;
+}
+.card h2{color:#22c55e;margin-top:0}
+.btn{
+background:#22c55e;
+color:#020617;
+padding:10px 14px;
+border-radius:8px;
+border:none;
+font-weight:bold;
+margin:6px;
+cursor:pointer;
+}
+.video-box{
+width:100%;
+aspect-ratio:16/9;
+background:#000;
+border-radius:14px;
+overflow:hidden;
+}
+.video-box iframe,
+.video-box video{
+width:100%;
+height:100%;
+border:0;
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+gap:12px;
+}
+.grid .item{
+background:rgba(2,6,23,.95);
+border-radius:12px;
+padding:10px;
+text-align:center;
+cursor:pointer;
+}
+.grid img{
+max-width:80px;
+margin-bottom:6px;
+}
+footer{
+background:#020617;
+text-align:center;
+padding:18px;
+font-size:.9rem;
+color:#94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<img src="https://c4fd0838c8.cbaul-cdnwnd.com/952b98c6f38743770439abf4fa7ac74e/200000029-d308dd308f/ChatGPT Image 16 ene 2026, 11_00_20 a.m..webp" class="logo-float">
+
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#eventos">Eventos</a>
+<a href="#canales">Canales</a>
+<a href="#radio">Radio</a>
+<a href="#anuncio">Anuncio</a>
+<a href="#videos">Videos</a>
+<a href="#contacto">Contacto</a>
+</nav>
+
+<section id="inicio">
+<div class="card" style="text-align:center">
+<h2>IPTV PREMIUM EN GUATEMALA</h2>
+<p>Canales • Eventos • Radios • Smart TV</p>
+</div>
+</section>
+
+<section id="eventos">
+<div class="card">
+<h2>Eventos en Vivo</h2>
+
+<button class="btn" onclick="cambiarEvento(1)">Evento 1</button>
+<button class="btn" onclick="cambiarEvento(2)">Evento 2</button>
+<button class="btn" onclick="cambiarEvento(3)">Evento 3</button>
+
+<div class="video-box" style="margin-top:12px">
+<iframe id="eventoFrame" src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/TVEmigrante/videos/860481873417887/&show_text=false" allowfullscreen></iframe>
+</div>
+</div>
+</section>
+
+<section id="canales">
+<div class="card">
+<h2>Canales en Vivo</h2>
+
+<div class="grid">
+<div class="item" onclick="playCanal(1)">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Tv_azteca_logo.png">
+Mas Tv
+</div>
+<div class="item" onclick="playCanal(2)">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Telemundo_logo.svg">
+Luna Visión Xela
+</div>
+<div class="item" onclick="playCanal(3)">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Logo_CNN.svg">
+TDS SOLOLA
+</div>
+</div>
+
+<div class="video-box" style="margin-top:14px">
+<video id="tvPlayer" controls playsinline></video>
+</div>
+</div>
+</section>
+
+<section id="radio">
+<div class="card">
+<h2>Radios Guatemala</h2>
+
+<div class="grid">
+<div class="item" onclick="playRadio(1)">
+<img src="https://i.ytimg.com/vi/t80Hoav1qDQ/hq720.jpg">
+La Sonora
+</div>
+<div class="item" onclick="playRadio(2)">
+<img src="https://radios.com.gt/wp-content/uploads/2020/03/949-fm.png">
+949 FM
+</div>
+<div class="item" onclick="playRadio(3)">
+<img src="https://radios.com.gt/wp-content/uploads/2020/03/emisoras-unidas.png">
+Emisoras Unidas
+</div>
+</div>
+
+<audio id="radioPlayer" controls style="width:100%;margin-top:12px"></audio>
+</div>
+</section>
+
+<section id="nota-informativa">
+<div class="card" style="text-align:center">
+<h2>NOTA INFORMATIVA</h2>
+<img src="https://c4fd0838c8.cbaul-cdnwnd.com/952b98c6f38743770439abf4fa7ac74e/200000115-9346593467/NOTA%20INFORMATIVA_20260127_074509_0000.webp?ph=c4fd0838c8" style="width:100%;border-radius:14px">
+</div>
+</section>
+
+<section id="anuncio">
+<div class="card" style="text-align:center">
+<h2>ANUNCIO COMERCIAL</h2>
+</div>
+</section>
+
+<section id="videos">
+<div class="card">
+<h2>Videos en Vivo</h2>
+
+<button class="btn" onclick="cambiarVideo(1)">Live YouTube</button>
+<button class="btn" onclick="cambiarVideo(2)">Live YouTube</button>
+
+<div class="video-box" style="margin-top:12px">
+<iframe id="videoFrame" src="https://www.youtube.com/embed/UMURCYbO7H0" allowfullscreen></iframe>
+</div>
+</div>
+</section>
+
+<section id="contacto">
+<div class="card" style="text-align:center">
+<h2>Contacto</h2>
+<a class="btn" href="https://wa.me/50200000000">WhatsApp</a>
+<a class="btn" href="https://www.facebook.com/profile.php?id=61586550787034">Facebook</a>
+</div>
+</section>
+
+<footer>© 2026 TV SFC LA UNIÓN</footer>
+
+<script>
+const eventos={
+1:"https://www.facebook.com/TVEmigrante/videos/860481873417887/",
+2:"https://www.facebook.com/100091993670606/videos/26636647165924728/",
+3:"https://www.facebook.com/100091993670606/videos/26636647165924728/"
+};
+
+function cambiarEvento(id){
+document.getElementById("eventoFrame").src=
+"https://www.facebook.com/plugins/video.php?href="+encodeURIComponent(eventos[id])+"&show_text=false";
+}
+
+const canales={
+1:"http://iptv.streamhispanatv.net:8080/live/playgt/playgt2023/65.m3u8",
+2:"https://cdn.streamhispanatv.net:3670/live/lunavisionlive.m3u8",
+3:"http://iptv.streamhispanatv.net:8080/playgt/playgt2023/52.m3u8"
+};
+
+function playCanal(id){
+const v=document.getElementById("tvPlayer");
+v.src=canales[id];
+v.play().catch(()=>{});
+}
+
+const radios={
+1:"https://d63yyf5yop3gl.cloudfront.net/index.m3u8",
+2:"https://icecast.mega-streaming.net:8000/949fm",
+3:"https://icecast.mega-streaming.net:8000/emisoras"
+};
+
+function playRadio(id){
+const r=document.getElementById("radioPlayer");
+r.src=radios[id];
+r.play().catch(()=>{});
+}
+
+const videosYT={
+1:"https://www.youtube.com/embed/UMURCYbO7H0",
+2:"https://www.youtube.com/embed/kxW-HJNjs8w"
+};
+
+function cambiarVideo(id){
+document.getElementById("videoFrame").src=videosYT[id];
+}
+</script>
+
+</body>
+</html>
